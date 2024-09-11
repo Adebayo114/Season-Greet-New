@@ -7,7 +7,7 @@ body{
     justify-content: center;
     height: 100vh;
     background-color: #f0f0f0;
-    background-image: url(./media/pexels-george-dolgikh-1303098.jpg);
+    background-image: url(../assets/Media/pexels-george-dolgikh-1303098.jpg);
 }
 
 .head-container {
@@ -78,28 +78,30 @@ a{
 
 /* Background for Happy Birthday */
 .happy-birthday-bg {
-    background-image: url('./images/pexels-nietjuh-796606.jpg'); /* Replace with the correct path */
+    background-image: url('../assets/Images/pexels-nietjuh-796606.jpg'); /* Replace with the correct path */
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Happy New Year */
 .happy-new-year-bg {
-    background-image: url('./images/pexels-johnpaultyrone-450301.jpg'); /* Replace with the correct path */
+    background-image: url('../assets/Images/pexels-johnpaultyrone-450301.jpg'); /* Replace with the correct path */
     background-size: cover;
     background-position: center;
+    color:#DAA520;
+    ;
 }
 
 /* Background for Valentine's Day */
 .happy-valentines-day-bg {
-    background-image: url('./images/pexels-gabby-k-5874620.jpg'); /* Replace with the correct path */
+    background-image: url('../assets/Images/pexels-gabby-k-5874620.jpg'); /* Replace with the correct path */
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Happy Easter */
 .happy-easter-bg {
-    background-image: url('./images/pexels-italo-melo-248867-2356140.jpg');
+    background-image: url('../assets/Images/pexels-italo-melo-248867-2356140.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -107,49 +109,49 @@ a{
 
 /* Background for Halloween */
 .happy-halloween-bg {
-    background-image: url('./images/pexels-ifreestock-619424.jpg');
+    background-image: url('../assets/Images/pexels-ifreestock-619424.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Mother's Day */
 .happy-mothers-day-bg {
-    background-image: url('./images/pexels-pixabay-51953.jpg');
+    background-image: url('../assets/Images/pexels-pixabay-51953.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Father's Day */
 .happy-fathers-day-bg {
-    background-image: url('./images/pexels-josh-willink-11499-69096.jpg');
+    background-image: url('../assets/Images/pexels-josh-willink-11499-69096.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Children's Day */
 .happy-childrens-day-bg {
-    background-image: url('./images/pexels-ajaybhargavguduru-939700.jpg');
+    background-image: url('../assets/Images/pexels-ajaybhargavguduru-939700.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Merry Christmas */
 .merry-christmas-bg {
-    background-image: url('./images/pexels-efrem-efre-2786187-19618156.jpg');
+    background-image: url('../assets/Images/pexels-efrem-efre-2786187-19618156.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Boxing Day */
 .happy-boxing-day-bg {
-    background-image: url('./images/pexels-ma-boite-a-photos-64239-236128.jpg');
+    background-image: url('../assets/Images/pexels-ma-boite-a-photos-64239-236128.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Ed-al-Kabir */
 .happy-ed-al-kabir-bg {
-    background-image: url('./images/pexels-aqtai-2233416.jpg');
+    background-image: url('../assets/Images/pexels-aqtai-2233416.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -157,21 +159,21 @@ a{
 
 /* Background for Ed-al-Fitr */
 .happy-ed-al-fitr-bg {
-    background-image: url('./images/pexels-thirdman-7957127.jpg');
+    background-image: url('../assets/Images/pexels-thirdman-7957127.jpg');
     background-size: cover;
     background-position: center;
     color:chocolate;
 }
 
 .happy-graduation-day-bg {
-    background-image: url('./images/pexels-rdne-7713351.jpg');
+    background-image: url('../assets/Images/pexels-rdne-7713351.jpg');
     background-size: cover;
     background-position: center;
     color:chocolate;
 }
 
 .keep-up-the-good-work-bg{
-    background-image: url('./images/pexels-savvas-stavrinos-270619-814544.jpg');
+    background-image: url('../assets/Images/pexels-mikebirdy-417827.jpg');
     background-size: cover;
     background-position: center;
     color:chocolate;
@@ -179,21 +181,21 @@ a{
 
 /* Background for Eid-al-Maulud */
 .eid-al-maulud-bg {
-    background-image: url('./images/pexels-halid-elosman-3328515-28161238.jpg');
+    background-image: url('../assets/Images/pexels-halid-elosman-3328515-28161238.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Independence Day  */
 .happy-independence-day-bg {
-    background-image: url('./images/pexels-tiohugo-16146279.jpg');
+    background-image: url('../assets/Images/pexels-tiohugo-16146279.jpg');
     background-size: cover;
     background-position: center;
 }
 
 /* Background for Democracy Day */
 .happy-democracy-day-bg {
-    background-image: url('./images/pexels-rdne-6257105.jpg');
+    background-image: url('../assets/Images/pexels-rdne-6257105.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -201,8 +203,9 @@ a{
 
 /* Background for Worker's Day */
 .happy-workers-day-bg {
-    background-image: url('./images/pexels-mikebirdy-417827.jpg');
+    background-image: url('../assets/Images/pexels-savvas-stavrinos-270619-814544.jpg');
     background-size: cover;
     background-position: center;
     color: white;
 }
+

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import vids from '../assets/Media/pexels-nicole-michalou-5754819 (2160p) (1).mp4';
 import '../Styles/FormComponent.css';
+import '../Styles/FinalResult.css'
 
 const FormComponent: React.FC = () => {
     const navigate = useNavigate();
@@ -15,17 +16,22 @@ const FormComponent: React.FC = () => {
         who: '',
     });
 
-    // Handle input changes for both text and checkboxes
+    // Handle input changes for text, select, and checkbox elements
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const target = e.target as HTMLInputElement | HTMLSelectElement; // Explicitly cast to HTMLInputElement or HTMLSelectElement
-        const { id, value, type } = target;
-    
-        setFormData(prevData => ({
-            ...prevData,
-            [id]: type === 'checkbox' ? (target as HTMLInputElement).checked : value,
-        }));
+        const { id, value, type } = e.target;
+
+        if (type === 'checkbox') {
+            setFormData((prevData) => ({
+                ...prevData,
+                [id]: (e.target as HTMLInputElement).checked, // Access 'checked' property safely
+            }));
+        } else {
+            setFormData((prevData) => ({
+                ...prevData,
+                [id]: value,
+            }));
+        }
     };
-    
 
     // Form submission logic
     const submitForm = (e: React.FormEvent) => {
@@ -53,31 +59,33 @@ const FormComponent: React.FC = () => {
         navigate(`/results?${urlParams.toString()}`);
     };
 
-    // Get dynamic background class based on the selected option
-    const getBackgroundClass = () => {
-        const backgroundClasses: Record<string, string> = {
-            'Happy Birthday': 'happy-birthday-bg',
-            'Happy New Year': 'happy-new-year-bg',
-            "Happy Valentine's Day": 'happy-valentines-day-bg',
-            'Happy Easter': 'happy-easter-bg',
-            'Happy Halloween': 'happy-halloween-bg',
-            "Happy Mother's Day": 'happy-mothers-day-bg',
-            "Happy Father's Day": 'happy-fathers-day-bg',
-            "Happy Children's Day": 'happy-childrens-day-bg',
-            'Merry Christmas': 'merry-christmas-bg',
-            'Happy Boxing Day': 'happy-boxing-day-bg',
-            'Happy Ed-al-Kabir': 'happy-ed-al-kabir-bg',
-            'Happy Ed-al-Fitr': 'happy-ed-al-fitr-bg',
-            'Happy Graduation Day': 'happy-graduation-day-bg',
-            'Keep Up the Good Work': 'keep-up-the-good-work-bg',
-            'Eid-al-Maulud': 'eid-al-maulud-bg',
-            'Happy Independence Day': 'happy-independence-day-bg',
-            'Happy Democracy Day': 'happy-democracy-day-bg',
-            "Happy Worker's Day": 'happy-workers-day-bg',
-        };
-
-        return backgroundClasses[formData.option] || 'default-bg';
+  // Get dynamic background class based on the selected option
+const getBackgroundClass = () => {
+    const backgroundClasses: Record<string, string> = {
+        'Happy Birthday': 'happy-birthday-bg',
+        'Happy New Year': 'happy-new-year-bg',
+        'Happy Valentine\'s Day': 'happy-valentines-day-bg',
+        'Happy Easter': 'happy-easter-bg',
+        'Happy Halloween': 'happy-halloween-bg',
+        'Happy Mother\'s Day': 'happy-mothers-day-bg',
+        'Happy Father\'s Day': 'happy-fathers-day-bg',
+        'Happy Children\'s Day': 'happy-childrens-day-bg',
+        'Merry Christmas': 'merry-christmas-bg',
+        'Happy Boxing Day': 'happy-boxing-day-bg',
+        'Happy Ed-al-Kabir': 'happy-ed-al-kabir-bg',
+        'Happy Ed-al-Fitr': 'happy-ed-al-fitr-bg',
+        'Happy Graduation Day': 'happy-graduation-day-bg',
+        'Keep Up the Good Work': 'keep-up-the-good-work-bg',
+        'Eid-al-Maulud': 'eid-al-maulud-bg',
+        'Happy Independence Day': 'happy-independence-day-bg',
+        'Happy Democracy Day': 'happy-democracy-day-bg',
+        'Happy Worker\'s Day': 'happy-workers-day-bg',
     };
+
+    // Retrieve the class corresponding to the selected option
+    return backgroundClasses[formData.option] || 'default-bg';
+};
+
 
     return (
         <div className={`start ${getBackgroundClass()}`}>
@@ -89,26 +97,27 @@ const FormComponent: React.FC = () => {
                 <input id="surname" type="text" placeholder="Surname" value={formData.surname} onChange={handleChange} />
                 <br /><br />
                 <select id="option" className="select-list" value={formData.option} onChange={handleChange}>
-                    <option value="">Please Choose Your List Choice</option>
-                    <option value="Happy Birthday">Happy Birthday 🎁🎈🎂</option>
-                    <option value="Happy New Year">Happy New Year 🎊🎈🎆🎇🧨✨</option>
-                    <option value="Happy Valentine's Day">Happy Valentine's Day ♥💓👩‍❤️‍👩</option>
-                    <option value="Happy Easter">Happy Easter 🥚🎁🐰</option>
-                    <option value="Happy Halloween">Happy Halloween 🎃🎃🎊</option>
-                    <option value="Happy Mother's Day">Happy Mother's Day 👩💓</option>
-                    <option value="Happy Father's Day">Happy Father's Day 🧔💓</option>
-                    <option value="Happy Children's Day">Happy Children's Day 👨‍👨‍👧‍👧💓🎊</option>
-                    <option value="Merry Christmas">Merry Christmas ✨🎄🎊🎇</option>
-                    <option value="Happy Boxing Day">Happy Boxing Day 🥊😉</option>
-                    <option value="Happy Ed-al-Kabir">Happy Ed-al-Kabir 👳‍♂️💓</option>
-                    <option value="Happy Ed-al-Fitr">Happy Ed-al-Fitr 🧕💓</option>
-                    <option value="Happy Graduation Day">Happy Graduation Day 🎓🎓</option>
-                    <option value="Keep Up the Good Work">Keep Up the Good Work 😉</option>
-                    <option value="Eid-al-Maulud">Eid-al-Maulud 🌙🎊</option>
-                    <option value="Happy Independence Day">Happy Independence Day 👨‍👨‍👧‍👧💓</option>
-                    <option value="Happy Democracy Day">Happy Democracy Day 🎆🎇</option>
-                    <option value="Happy Worker's Day">Happy Worker's Day 👨‍🔧🎊😉</option>
+                    <option className='list-child' value="">Please Choose Your List Choice</option>
+                    <option className='list-child'value="Happy Birthday">Happy Birthday 🎁🎈🎂</option>
+                    <option className='list-child'value="Happy New Year">Happy New Year 🎊🎈🎆🎇🧨✨</option>
+                    <option className='list-child'value="Happy Valentine's Day">Happy Valentine's Day ♥💓👩‍❤️‍👩</option>
+                    <option className='list-child' value="Happy Easter">Happy Easter 🥚🎁🐰</option>
+                    <option className='list-child'value="Happy Halloween">Happy Halloween 🎃🎃🎊</option>
+                    <option className='list-child'value="Happy Mother's Day">Happy Mother's Day 👩💓</option>
+                    <option className='list-child'value="Happy Father's Day">Happy Father's Day 🧔💓</option>
+                    <option className='list-child'value="Happy Children's Day">Happy Children's Day 👨‍👨‍👧‍👧💓🎊</option>
+                    <option className='list-child'value="Merry Christmas">Merry Christmas ✨🎄🎊🎇</option>
+                    <option className='list-child'value="Happy Boxing Day">Happy Boxing Day 🥊😉</option>
+                    <option className='list-child'value="Happy Ed-al-Kabir">Happy Ed-al-Kabir 👳‍♂️💓</option>
+                    <option className='list-child'value="Happy Ed-al-Fitr">Happy Ed-al-Fitr 🧕💓</option>
+                    <option className='list-child'value="Happy Graduation Day">Happy Graduation Day 🎓🎓</option>
+                    <option className='list-child'value="Keep Up the Good Work">Keep Up the Good Work 😉</option>
+                    <option className='list-child'value="Eid-al-Maulud">Eid-al-Maulud 🌙🎊</option>
+                    <option className='list-child'value="Happy Independence Day">Happy Independence Day 👨‍👨‍👧‍👧💓</option>
+                    <option className='list-child'value="Happy Democracy Day">Happy Democracy Day 🎆🎇</option>
+                    <option className='list-child'value="Happy Worker's Day">Happy Worker's Day 👨‍🔧🎊😉</option>
                 </select>
+
                 <br /><br />
                 <label htmlFor="mrCheckbox">Mr</label>
                 <input id="mrCheckbox" type="checkbox" checked={formData.mrCheckbox} onChange={handleChange} />
